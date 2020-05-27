@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/pageHeader"
+        android:layout_alignParentStart="true"
+        tools:ignore="NotSibling"
+        android:layout_alignParentLeft="true">
+
+        <ImageButton
+            android:id="@+id/closeDialog"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/back"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/pageHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/editTask"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/deleteTodo"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/ic_clear"
+            android:layout_marginRight="25dp"
+            android:contentDescription="@string/theme"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/todoTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relat"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="top"
+        android:hint="My Task "
+        android:inputType="textMultiLine"
+        android:maxLines="3"
+        android:nextFocusDown="@+id/todoDescription"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimaryText"
+        android:textColorHint="@android:color/darker_gray"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="38sp" />
+
+    <RelativeLayout
+        android:id="@+id/DateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/podrobnosti"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/DateInIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="11dp"
+            android:text="@string/_12"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/IconDate"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/calendars"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold|italic"
+            android:text="@string/_21_5_2020"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@android:color/darker_gray"
+            android:textCursorDrawable="@drawable/color_cursor"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/podrobnosti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/todoTask"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/editicon"
+            android:contentDescription="@string/todo" />
+
+        <EditText
+            android:id="@+id/todoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/BackView"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="top"
+            android:hint="Details"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="4"
+            android:textColor="@color/colorPrimaryText"
+            android:textColorHint="@android:color/darker_gray"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimaryDark"
+        android:stateListAnimator="@null"
+        android:text="Save Task"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>
+

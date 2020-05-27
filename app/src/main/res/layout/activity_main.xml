@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/addTaskLayout">
+
+        <RelativeLayout
+            android:id="@+id/rr"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <ImageView
+                android:id="@+id/action_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"/>
+
+            <TextView
+                android:id="@+id/textViewCompleted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="To Do List"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/deleteAll"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/ic_clear"
+                android:layout_marginRight="25dp"
+                android:contentDescription="@string/theme"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#eeeeee"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/workThings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Work Things to complete"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="20sp"
+                    android:layout_marginRight="5dp"
+                    android:textStyle="bold"
+                    android:autoLink="all"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/taskRemaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/textViewCompleted"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/textViewCompleted"
+                    android:layout_toRightOf="@+id/textViewCompleted"
+                    android:background="@drawable/child"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="0"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Progress"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="13sp"
+                android:autoLink="all"/>
+
+            <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                android:id="@+id/todoProgress"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:rcBackgroundColor="#0A000000"
+                app:rcBackgroundPadding="2dp"
+                app:rcMax="100"
+                app:rcProgress="10"
+                app:rcProgressColor="#3b97c2"
+                app:rcRadius="80dp"
+                app:rcTextPositionPriority="outside"
+                app:rcTextProgress="10%"
+                app:rcTextProgressColor="#111111"
+                app:rcAnimationEnable="true"
+                app:rcAnimationSpeedScale="10"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO DO"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="start"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="13sp"
+            android:autoLink="all"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleTodo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/welcomeMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mainQuestion"
+            android:textColor="?titleColor"
+            android:textSize="21sp"
+            android:layout_centerInParent="true"
+            android:gravity="top|center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="top|center_horizontal"
+            android:text="@string/msg_no_notes"
+            android:textColor="?titleColor"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addTaskLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/round_border_edit_text"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/edtTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:hint="@string/add_new"
+            android:paddingRight="30dp"
+            android:layout_weight="70"/>
+
+        <ImageButton
+            android:id="@+id/btnAddNew"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/ic_add"
+            android:layout_weight="30"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

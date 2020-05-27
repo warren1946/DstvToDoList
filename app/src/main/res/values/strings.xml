@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="app_main">To Do List</string>
+
+    <string name="msg_no_notes">You can create new tasks \n using  "+"  button</string>
+    <string name="msg_no_notes2">You can delete completed tasks \n using red button</string>
+    <string name="msg_delete_all_warning">Are you sure you want to delete?  All data will be lost!</string>
+    <string name="msg_delete_warning">Are you sure you want to delete Item?</string>
+    <string name="theme">Light or dark theme switch</string>
+    <string name="add_new">Add new item</string>
+    <string name="mainQuestion">What do you want to do today ?</string>
+
+    <string name="_12">12</string>
+    <string name="todo">TODO</string>
+    <string name="_21_5_2020">21.5.2020</string>
+    <string name="editTask">Edit Task</string>
+    <string name="addTask">Add Task</string>
+
+    <!--Error messages-->
+    <string name="err_todo_item">Enter an item before submitting!</string>
+    <string name="err_required">This field is required!</string>
+
+    <string name="hint_new_task">This is new Task This is new Task This is new Task</string>
+
+</resources>
